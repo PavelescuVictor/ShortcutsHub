@@ -1,0 +1,74 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.main__wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: #09775b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  -webkit-app-region: drag;
+  transition: width 0.1s ease-in, height 0.1s ease-in,
+    border-radius 0.2s ease-in, margin 0.1s ease-in-out;
+  transition-delay: 0.2s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.main__wrapper--extended {
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+  transition: width 0.1s ease-in, height 0.1s ease-in,
+    border-radius 0.2s ease-in;
+  transition-delay: 0s;
+}
+
+.main__wrapper:not(.main__wrapper--extended):hover {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  margin: 0px;
+}
+
+.main__content {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.2s ease-in;
+  transition-delay: 0s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__content--visible {
+  height: 100%;
+  transition: height 0.2s ease-out;
+  transition-delay: 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    background: #333;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  main {
+    background: #ddd;
+    color: black;
+  }
+}
